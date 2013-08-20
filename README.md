@@ -1,4 +1,4 @@
-# grunt-init-om-website
+# grunt-init-static
 
 > Create a website scaffold with [grunt-init][].
 
@@ -10,7 +10,7 @@ If you haven't already done so, install [grunt-init][].
 Once grunt-init is installed, place this template in your `~/.grunt-init/` directory. It's recommended that you use git to clone this template into that directory, as follows:
 
 ```bash
-git clone git@github.com:ogilvyatlanta/grunt-init-om-website.git ~/.grunt-init/om-website
+git clone https://github.com/eatarandom/grunt-init-static.git ~/.grunt-init/eatarandom-static
 ```
 
 ## Usage
@@ -18,7 +18,7 @@ git clone git@github.com:ogilvyatlanta/grunt-init-om-website.git ~/.grunt-init/o
 At the command-line, cd into an empty directory, run this command and follow the prompts.
 
 ```bash
-grunt-init om-website
+grunt-init eatarandom-static
 # install dependencies
 bundle install && npm install && bower install
 ```
