@@ -7,3 +7,15 @@
  */
 
 @import "neat/neat-helpers";
+
+$visual-grid:true;				// Displays the visual grid when set to true.
+$visual-grid-color: #eee;		// Sets the visual grid color.
+$visual-grid-index: back;		// Sets the z-index property of the visual grid.
+$visual-grid-opacity: 0.2;		// Sets the opacity property of the visual grid.
+
+$max-width: em(960);			// Sets the max-width property of the element that includes outer-container().
+$grids-columns: 12;				// Sets the total number of columns in the grid. Its value can be overidden inside a media query using the media() mixin.
+$gutter: golden-ratio(1em, 1);	// Sets the relative width of a single grid gutter.
+
+$border-box-sizing: true;		// When set to true, it sets the box-sizing property of all elements to border-box.
+

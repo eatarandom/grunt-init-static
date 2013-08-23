@@ -5,3 +5,27 @@
  *	Page and section specific rules.
  *	
  */
+
+// 
+.logo {
+	@include hide-text;
+	display:block;
+}
+//
+.btn {
+	@include inline-block;
+	@include transition(background $animation-speed-slow $animation-easing);
+	padding:8px 15px;
+	border-radius:5px;
+	color:$color-btn-color;
+	background:$color-btn-background;
+	&:hover {
+		color:$color-btn-color-hover;
+		background:$color-btn-background-hover;
+		text-decoration:none;
+	}
+}
+.btn-submit {}
+
+.icon {}
+

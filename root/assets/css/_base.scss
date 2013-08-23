@@ -8,7 +8,3 @@
 
 @import "compass/reset";	// main reset
 @import "compass/css3";		// TODO: check to see if we should just use bourbon and remove this
-
-@import "bourbon/bourbon";	// mixins
-@import "helpers";			// site-wide variables and definitions 
-@import "neat/neat";		// grid

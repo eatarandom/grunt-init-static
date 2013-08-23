@@ -1,0 +1,40 @@
+/**
+ *	base.scss
+ *	
+ *	Description:
+ *	Base rule elements. 
+ *	
+ */
+
+@import "bourbon/bourbon";		// mixins
+@import "helpers";				// site-wide variables and definitions 
+@import "neat/neat";			// grid
+
+// colors
+$color-primary 		 		: #000;
+$color-secondary 			: #ccc;
+$color-body-color 			: #444;
+$color-body-background 		: #fff;
+$color-link 				: red;
+$color-link-hover 			: lighten(red, 15);
+$color-btn-color  			: #fff;
+$color-btn-color-hover      : #fff;
+$color-btn-background 		: #000;
+$color-btn-background-hover : lighten(#000,45);
+
+// animation
+$animation-speed-slow 		: 750ms;
+$animation-speed-medium 	: 500ms;
+$animation-speed-fast 		: 250ms;
+$animation-easing 			: ease-in-out;
+
+// typography
+$type-sans 					: 'Helvetica', Arial, sans-serif;
+$type-serif 				: Georgia, serif;
+
+//
+$container-padding-x 		: em(10);
+$container-padding-y 		: 0;
+
+// media queries
+$media-980: new-breakpoint(min-width 980px 12);

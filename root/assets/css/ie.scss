@@ -6,4 +6,10 @@
  *	
  */
 
-@import "base"; 			// base element variables/mixins/prototypes
+@import "properties"; 		// variables/mixins/prototypes
+@import "media-980";
+@include media-980;
+
+.last-child {
+	margin-right:0 !important;
+}

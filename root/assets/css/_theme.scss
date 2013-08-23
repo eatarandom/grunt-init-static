@@ -5,3 +5,30 @@
  *	Page and section specific rules.
  *	
  */
+
+body {
+	color:$color-body-color;
+	background:$color-body-background;
+}
+
+.outer-container {
+	width:100%;
+}
+.inner-container,
+.container {
+	@include outer-container;
+}
+.container {
+	padding: $container-padding-x $container-padding-y;
+}
+
+header {
+	position:relative;
+	width:100%;
+	background:red;
+	padding:20px 0;
+}
+footer {
+	background:$color-body-background;
+	padding:20px 0;
+}

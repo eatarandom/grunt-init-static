@@ -5,3 +5,39 @@
  *	Fonts and Icons.
  *	
  */
+body {
+	font-family: $type-sans;
+	font-size:100%;
+	color:$color-primary;
+	-webkit-font-smoothing:antialiased;
+}
+
+h1,h2,h3,
+h4,h5,h6 {}
+
+h1 {}
+h2 {}
+h3 {}
+h5 {}
+h6 {}
+
+p {
+	font-size:em(16);
+	line-height:em(24);
+}
+
+a {
+	color:$color-link;
+	text-decoration:none;
+	&:hover {
+		color:$color-link-hover;
+		text-decoration:underline;
+	}
+}
+
+.serif {
+	font-family: $type-serif;
+}
+.sans {
+	font-family: $type-sans;
+}

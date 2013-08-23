@@ -29,7 +29,7 @@ module.exports = function (grunt) {
 				fontsDir: 'assets/fonts',
 				importPath: 'assets/components',
 				relativeAssets: true,
-				require: '.config.rb'
+				config: '.config.rb'
 			},
 			dist: {},
 			server: {
@@ -51,16 +51,6 @@ module.exports = function (grunt) {
 							lrSnippet,
 							mountFolder(connect, '.tmp'),
 							mountFolder(connect, '')];
-					}
-				}
-			},
-			test: {
-				options: {
-					middleware: function (connect) {
-						return [
-							mountFolder(connect, '.tmp'),
-							mountFolder(connect, 'test')
-							];
 					}
 				}
 			},
@@ -93,8 +83,8 @@ module.exports = function (grunt) {
 			},
 			dist: {
 				files: {
-					'dist/assets/css/<%= pkg.name %>.css': [
-					'.tmp/assets/css/<%= pkg.name %>.css']
+					'dist/assets/css/main.css': [
+					'.tmp/assets/css/main.css']
 				}
 			}
 		},
@@ -141,8 +131,8 @@ module.exports = function (grunt) {
 				options: {
 					name: '<%= pkg.name %>',
 					baseUrl: 'assets/js',
-					mainConfigFile: 'assets/js/<%= pkg.name %>.js',
-					out: 'dist/assets/js/<%= pkg.name %>.js',
+					mainConfigFile: 'assets/js/main.js',
+					out: 'dist/assets/js/main.js',
 					useStrict: true,
 					preserveLicenseComments: false,
 					wrap: true,
@@ -157,8 +147,8 @@ module.exports = function (grunt) {
 				banner: '<%= banner %>'
 			},
 			dist: {
-				src: 'dist/assets/js/<%= pkg.name %>.js',
-				dest: 'dist/assets/js/<%= pkg.name %>.js'
+				src: 'dist/assets/js/main.js',
+				dest: 'dist/assets/js/main.js'
 			},
 		},
 		//

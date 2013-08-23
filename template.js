@@ -7,7 +7,7 @@
  * Licensed under the MIT license.
  */
 
- 'use strict';
+'use strict';
 
 // Basic template description.
 exports.description = 'Create a website scaffold with grunt-init';
@@ -23,13 +23,13 @@ exports.after = 'You should now install project dependencies with \n' +
 exports.warnOn = '*';
 
 // The actual init template.
-exports.template = function(grunt, init, done) {
+exports.template = function (grunt, init, done) {
 
 	init.process({}, [
-	
+
 		init.prompt('name')
-	
-	], function(err, props) {
+
+	], function (err, props) {
 
 		// Files to copy (and process).
 		var files = init.filesToCopy(props);
@@ -54,7 +54,6 @@ exports.template = function(grunt, init, done) {
 				'grunt-contrib-livereload': '0.1.1',
 				'grunt-contrib-requirejs': '0.4.0',
 				'grunt-contrib-uglify': '~0.1.1',
-				'grunt-mocha': '~0.2.2',
 				'grunt-open': '~0.2.0',
 				'grunt-regarde': '~0.1.1',
 				'matchdep': '~0.1.1'

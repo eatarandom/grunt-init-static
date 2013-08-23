@@ -1,29 +1,16 @@
-'use strict';
-// test to see if we should load
-// zepto or fallback to jquery
-// returns object
-// @param name
-// @param src
-/*
-var library = (function() {
-    var libs = [{
-        name: 'zepto',
-        src: '../components/zepto/zepto.min.js'
-    }, {
-        name: 'jquery',
-        src: '../components/jquery/jquery.min.js'
-    }];
-    return libs[0] || libs[1];
-})();
-*/
 require.config({
     paths: {
-		'$': '../components/zepto/zepto.min.js',
-        underscore: '../components/underscore/underscore-min.js'
+        'jquery': '../components/jquery/jquery.min'
+    },
+    shim: {
+        "jquery": {
+            "exports": "$"
+        }
     }
+
 });
 
-require(['site'], function (site) {
+require(['site'], function (Site) {
     'use strict';
-    site.initialize();
+    window.Site = new Site();
 });
