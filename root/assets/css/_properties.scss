@@ -1,40 +1,95 @@
 /**
- *	base.scss
+ *	properties.scss
  *	
  *	Description:
- *	Base rule elements. 
+ *	Define your variables in this file.
  *	
  */
 
-@import "bourbon/bourbon";		// mixins
-@import "helpers";				// site-wide variables and definitions 
-@import "neat/neat";			// grid
+@import "bourbon/bourbon";	// mixins
+@import "helpers";			// site-wide variables and definitions 
+@import "neat/neat";		// grid
 
 // colors
-$color-primary 		 		: #000;
-$color-secondary 			: #ccc;
-$color-body-color 			: #444;
-$color-body-background 		: #fff;
-$color-link 				: red;
-$color-link-hover 			: lighten(red, 15);
+$color-mango                : #d96932;
+$color-mango-light   		: lighten($color-mango, 15);
+$color-cherry               : #d71920;
+$color-gray                 : #707372;
+$color-orange               : #e78715;
+$color-gray-light  			: #e7e7e7;
+$color-gray-dark  			: #2b2b2b;
+$color-green       			: green;
+
+$color-primary 		 		: $color-mango;
+$color-secondary 			: $color-orange;
+$color-body-color 			: $color-gray;
+$color-body-background 		: #dcdcdc;
+$color-link 				: $color-mango;
+$color-link-hover 			: $color-orange;
 $color-btn-color  			: #fff;
 $color-btn-color-hover      : #fff;
-$color-btn-background 		: #000;
-$color-btn-background-hover : lighten(#000,45);
+$color-btn-background 		: $color-mango;
+$color-btn-background-hover : $color-orange;
 
 // animation
-$animation-speed-slow 		: 750ms;
-$animation-speed-medium 	: 500ms;
-$animation-speed-fast 		: 250ms;
+$animation-speed-slow 		: 1500ms;
+$animation-speed-medium 	: 1200ms;
+$animation-speed-fast 		: 500ms;
+$animatoin-speed-superfast  : 250ms;
 $animation-easing 			: ease-in-out;
+$animation-swing      		: cubic-bezier(0.685, 0.100, 0.365, 1.750);
 
 // typography
 $type-sans 					: 'Helvetica', Arial, sans-serif;
 $type-serif 				: Georgia, serif;
 
-//
-$container-padding-x 		: em(10);
-$container-padding-y 		: 0;
+// design elements
+$border-radius     			: em(3);
 
-// media queries
-$media-980: new-breakpoint(min-width 980px 12);
+// breakpoints
+
+// SMALL
+// 640px
+$S          				: new-breakpoint(min-width 40em 12);
+// MEDIUM
+// 800px
+$M     						: new-breakpoint(min-width 50em 12);
+// LARGE
+// 980px
+$L   						: new-breakpoint(min-width 61.25em 12);
+// XLARGE
+// 1350px
+$XL  						: new-breakpoint(min-width 84.375em 12);
+
+// This mixin should be used for your media queries.
+// It allows us to include styles outside of the
+// media queries for older browsers.
+@mixin bp($query) {
+	@if($IE) {
+		@content;
+	}
+	@else {
+		@include media($query) { @content; }
+	}
+}
+
+// This mixin is a test for IE.
+// $IE is set in stylesheets/fallback.css.scss
+// This mixin should be used very sparingly.
+@mixin isIE() {
+	@if($IE) { @content; }
+}
+
+// Used to animate the swing interaction
+@mixin animate($direction: stop) {
+	@if($direction == start) {
+		@include backface-visibility(hidden);
+		@include transition(all $animation-speed-fast $animation-easing);
+		@include transform(perspective(1000px) rotateX(180deg) translateZ(0));
+		@include transform-origin(center bottom);
+		@include transform-style(preserve-3d);
+	} @else {
+		@include transition(all $animation-speed-fast $animation-easing);
+		@include transform(perspective(1000px) rotateX(0) translateZ(0));
+	}
+}

@@ -6,10 +6,15 @@
  *	
  */
 
-@import "properties"; 		// variables/mixins/prototypes
-@import "media-980";
-@include media-980;
+$IE: true;
 
-.last-child {
-	margin-right:0 !important;
+@import "base";				// base element 
+@import "properties"; 		// variables/mixins/prototypes
+@import "global";			// global site elements
+@import "typography";		// fonts
+@import "icon";				// icons
+@import "modules";			// re-usable site modules
+
+img {
+	-ms-interpolation-mode: bicubic;
 }

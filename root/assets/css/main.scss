@@ -9,12 +9,6 @@
 @import "base";				// base element 
 @import "properties"; 		// variables/mixins/prototypes
 @import "global";			// global site elements
-@import "typography";		// fonts and icons
+@import "typography";		// fonts
+@import "icon";				// icons
 @import "modules";			// re-usable site modules
-@import "theme";			// page and section specific rules
-
-// media queries
-@import "media-980";
-@include media($media-980) {
-	@include media-980;
-}
