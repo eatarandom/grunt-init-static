@@ -13,7 +13,7 @@ module.exports = function (grunt) {
 		//
 		pkg: grunt.file.readJSON('package.json'),
 		//
-		banner: '' + '/*! \n' + ' * Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.name %> \n' + ' * Authors: Dan Roberts \n' + ' */ \n' + '',
+		banner: '' + '/*! \n' + ' * Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.name %> \n' + ' * Authors: Ogilvy & Mather Atlanta \n' + ' */ \n' + '',
 		//
 		clean: {
 			dist: ['.tmp', 'dist'],
@@ -123,6 +123,9 @@ module.exports = function (grunt) {
 		open: {
 			server: {
 				path: 'http://<%= connect.options.hostname %>:<%= connect.options.port %>'
+			},
+			help: {
+				path: 'http://<%= connect.options.hostname %>:<%= connect.options.port %>/help.html?debug=1'
 			}
 		},
 		//
@@ -184,17 +187,17 @@ module.exports = function (grunt) {
 			'compass:server',
 			'livereload-start',
 			'connect:livereload',
-			'open',
+			'open:server',
 			'watch'
 		]);
 	});
 
-	grunt.registerTask('test', [
-		'clean:server',
-		'compass',
-        'connect:test',
-        'mocha'
-	]);
+	// grunt.registerTask('test', [
+	// 	'clean:server',
+	// 	'compass',
+	//        'connect:test',
+	//        'mocha'
+	// ]);
 
 	grunt.registerTask('build', [
 		'clean:dist',

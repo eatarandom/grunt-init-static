@@ -1,16 +1,19 @@
 require.config({
     paths: {
-        'jquery': '../components/jquery/jquery.min'
+        'jquery': '../components/jquery/jquery.min',
+        'Capture': '../components/capture/capture.min'
     },
     shim: {
-        "jquery": {
-            "exports": "$"
+        'jquery': {
+            'exports': '$'
         }
     }
-
 });
 
-require(['site'], function (Site) {
+require(['site', 'helpers/log'], function (Site, log) {
     'use strict';
-    window.Site = new Site();
+    var Site = new Site();
+    $(function () {
+        Site.ready();
+    });
 });
